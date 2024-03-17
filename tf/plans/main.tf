@@ -5,11 +5,11 @@ terraform {
       version = "~> 4.0"
     }
   }
-  backend "s3" {
-    bucket = var.backend-bucket
-    key    = var.backend-key
-    region = var.backend-region
-  }
+  # backend "s3" {
+  #   bucket = var.backend-bucket
+  #   key    = var.backend-key
+  #   region = var.backend-region
+  # }
 }
 
 provider "aws" {
@@ -17,8 +17,12 @@ provider "aws" {
   # profile = "default"
 }
 
+# provider "pagerduty" {
+#   token = local.root_outputs["pagerduty_api_token"]
+# }
+
 provider "pagerduty" {
-  token = local.root_outputs["pagerduty_api_token"]
+  token = var.pd-secret-value
 }
 
 module "pd-common" {
@@ -31,10 +35,9 @@ module "pd-common" {
   # ]
 }
 
-module "pd-gps-prod" {
+module "pd-gbst-prod" {
   source                      = "../app-modules/gbst"
   environment                 = "prod"
-  application                 = "gps"
 
   depends_on = [
     module.pd-common
