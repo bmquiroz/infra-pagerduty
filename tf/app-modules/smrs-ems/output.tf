@@ -1,44 +1,62 @@
-# # GPS outputs
-# output "gps-datadog-integration-id" {
-#   value = pagerduty_service_integration.prod-gps-service-integration-datadog.id
-# }
+# ARI outputs
+output "ari-datadog-integration-id" {
+  value = pagerduty_service_integration.prod-ari-service-integration-datadog.id
+}
 
-# output "gps-datadog-integration-key" {
-#   value = pagerduty_service_integration.prod-gps-service-integration-datadog.integration_key
-# }
+output "ari-datadog-integration-key" {
+  value = pagerduty_service_integration.prod-ari-service-integration-datadog.integration_key
+}
 
-# # BRD outputs
-# output "gps-datadog-integration-id" {
-#   value = pagerduty_service_integration.prod-gps-service-integration-datadog.id
-# }
+# CTR outputs
+output "ctr-datadog-integration-id" {
+  value = pagerduty_service_integration.prod-ctr-service-integration-datadog.id
+}
 
-# output "gps-datadog-integration-key" {
-#   value = pagerduty_service_integration.prod-gps-service-integration-datadog.integration_key
-# }
+output "ctr-datadog-integration-key" {
+  value = pagerduty_service_integration.prod-ctr-service-integration-datadog.integration_key
+}
 
-# # DEB outputs
-# output "gps-datadog-integration-id" {
-#   value = pagerduty_service_integration.prod-gps-service-integration-datadog.id
-# }
+# EMA outputs
+output "ema-datadog-integration-id" {
+  value = pagerduty_service_integration.prod-ema-service-integration-datadog.id
+}
 
-# output "gps-datadog-integration-key" {
-#   value = pagerduty_service_integration.prod-gps-service-integration-datadog.integration_key
-# }
+output "ema-datadog-integration-key" {
+  value = pagerduty_service_integration.prod-ema-service-integration-datadog.integration_key
+}
 
-# # JAG outputs
-# output "gps-datadog-integration-id" {
-#   value = pagerduty_service_integration.prod-gps-service-integration-datadog.id
-# }
+# SCR outputs
+output "scr-datadog-integration-id" {
+  value = pagerduty_service_integration.prod-scr-service-integration-datadog.id
+}
 
-# output "gps-datadog-integration-key" {
-#   value = pagerduty_service_integration.prod-gps-service-integration-datadog.integration_key
-# }
+output "scr-datadog-integration-key" {
+  value = pagerduty_service_integration.prod-scr-service-integration-datadog.integration_key
+}
 
-# # PPL outputs
-# output "gps-datadog-integration-id" {
-#   value = pagerduty_service_integration.prod-gps-service-integration-datadog.id
-# }
+# SST outputs
+output "sst-datadog-integration-id" {
+  value = pagerduty_service_integration.prod-sst-service-integration-datadog.id
+}
 
-# output "gps-datadog-integration-key" {
-#   value = pagerduty_service_integration.prod-gps-service-integration-datadog.integration_key
-# }
+output "sst-datadog-integration-key" {
+  value = pagerduty_service_integration.prod-sst-service-integration-datadog.integration_key
+}
+
+# STR outputs
+output "str-datadog-integration-id" {
+  value = pagerduty_service_integration.prod-str-service-integration-datadog.id
+}
+
+output "str-datadog-integration-key" {
+  value = pagerduty_service_integration.prod-str-service-integration-datadog.integration_key
+}
+
+# APT outputs
+output "apt-datadog-integration-id" {
+  value = pagerduty_service_integration.prod-apt-service-integration-datadog.id
+}
+
+output "apt-datadog-integration-key" {
+  value = pagerduty_service_integration.prod-apt-service-integration-datadog.integration_key
+}

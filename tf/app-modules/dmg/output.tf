@@ -1,44 +1,80 @@
-# # GPS outputs
-# output "gps-datadog-integration-id" {
-#   value = pagerduty_service_integration.prod-gps-service-integration-datadog.id
-# }
+# AEX outputs
+output "aex-datadog-integration-id" {
+  value = pagerduty_service_integration.prod-aex-service-integration-datadog.id
+}
 
-# output "gps-datadog-integration-key" {
-#   value = pagerduty_service_integration.prod-gps-service-integration-datadog.integration_key
-# }
+output "aex-datadog-integration-key" {
+  value = pagerduty_service_integration.prod-aex-service-integration-datadog.integration_key
+}
 
-# # BRD outputs
-# output "brd-datadog-integration-id" {
-#   value = pagerduty_service_integration.prod-brd-service-integration-datadog.id
-# }
+# BCM outputs
+output "bcm-datadog-integration-id" {
+  value = pagerduty_service_integration.prod-bcm-service-integration-datadog.id
+}
 
-# output "brd-datadog-integration-key" {
-#   value = pagerduty_service_integration.prod-brd-service-integration-datadog.integration_key
-# }
+output "bcm-datadog-integration-key" {
+  value = pagerduty_service_integration.prod-bcm-service-integration-datadog.integration_key
+}
 
-# # DEB outputs
-# output "deb-datadog-integration-id" {
-#   value = pagerduty_service_integration.prod-deb-service-integration-datadog.id
-# }
+# BSM outputs
+output "bsm-datadog-integration-id" {
+  value = pagerduty_service_integration.prod-bsm-service-integration-datadog.id
+}
 
-# output "deb-datadog-integration-key" {
-#   value = pagerduty_service_integration.prod-deb-service-integration-datadog.integration_key
-# }
+output "bsm-datadog-integration-key" {
+  value = pagerduty_service_integration.prod-bsm-service-integration-datadog.integration_key
+}
 
-# # JAG outputs
-# output "jag-datadog-integration-id" {
-#   value = pagerduty_service_integration.prod-jag-service-integration-datadog.id
-# }
+# CDR outputs
+output "cdr-datadog-integration-id" {
+  value = pagerduty_service_integration.prod-cdr-service-integration-datadog.id
+}
 
-# output "jag-datadog-integration-key" {
-#   value = pagerduty_service_integration.prod-jag-service-integration-datadog.integration_key
-# }
+output "cdr-datadog-integration-key" {
+  value = pagerduty_service_integration.prod-cdr-service-integration-datadog.integration_key
+}
 
-# # PPL outputs
-# output "ppl-datadog-integration-id" {
-#   value = pagerduty_service_integration.prod-ppl-service-integration-datadog.id
-# }
+# IND outputs
+output "ind-datadog-integration-id" {
+  value = pagerduty_service_integration.prod-ind-service-integration-datadog.id
+}
 
-# output "ppl-datadog-integration-key" {
-#   value = pagerduty_service_integration.prod-ppl-service-integration-datadog.integration_key
-# }
+output "ind-datadog-integration-key" {
+  value = pagerduty_service_integration.prod-ind-service-integration-datadog.integration_key
+}
+
+# RSH outputs
+output "rsh-datadog-integration-id" {
+  value = pagerduty_service_integration.prod-rsh-service-integration-datadog.id
+}
+
+output "rsh-datadog-integration-key" {
+  value = pagerduty_service_integration.prod-rsh-service-integration-datadog.integration_key
+}
+
+# SHM outputs
+output "shm-datadog-integration-id" {
+  value = pagerduty_service_integration.prod-shm-service-integration-datadog.id
+}
+
+output "shm-datadog-integration-key" {
+  value = pagerduty_service_integration.prod-shm-service-integration-datadog.integration_key
+}
+
+# SMD outputs
+output "smd-datadog-integration-id" {
+  value = pagerduty_service_integration.prod-smd-service-integration-datadog.id
+}
+
+output "smd-datadog-integration-key" {
+  value = pagerduty_service_integration.prod-smd-service-integration-datadog.integration_key
+}
+
+# RPA outputs
+output "rpa-datadog-integration-id" {
+  value = pagerduty_service_integration.prod-rpa-service-integration-datadog.id
+}
+
+output "rpa-datadog-integration-key" {
+  value = pagerduty_service_integration.prod-rpa-service-integration-datadog.integration_key
+}

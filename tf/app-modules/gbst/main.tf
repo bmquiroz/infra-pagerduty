@@ -14,6 +14,10 @@ resource "pagerduty_escalation_policy" "prod-gps-escalation-policy" {
       id   = data.pagerduty_user.ep-user.id
       type = "user_reference"
     }
+    target {
+      id   = var.pd_schedule
+      type = "schedule_reference"
+    }
   }
   lifecycle {
     ignore_changes = all
@@ -54,6 +58,10 @@ resource "pagerduty_escalation_policy" "prod-brd-escalation-policy" {
     target {
       id   = data.pagerduty_user.ep-user.id
       type = "user_reference"
+    }
+    target {
+      id   = var.pd_schedule
+      type = "schedule_reference"
     }
   }
   lifecycle {
@@ -96,6 +104,10 @@ resource "pagerduty_escalation_policy" "prod-deb-escalation-policy" {
       id   = data.pagerduty_user.ep-user.id
       type = "user_reference"
     }
+    target {
+      id   = var.pd_schedule
+      type = "schedule_reference"
+    }
   }
   lifecycle {
     ignore_changes = all
@@ -137,6 +149,10 @@ resource "pagerduty_escalation_policy" "prod-jag-escalation-policy" {
       id   = data.pagerduty_user.ep-user.id
       type = "user_reference"
     }
+    target {
+      id   = var.pd_schedule
+      type = "schedule_reference"
+    }
   }
   lifecycle {
     ignore_changes = all
@@ -177,6 +193,10 @@ resource "pagerduty_escalation_policy" "prod-ppl-escalation-policy" {
     target {
       id   = data.pagerduty_user.ep-user.id
       type = "user_reference"
+    }
+    target {
+      id   = var.pd_schedule
+      type = "schedule_reference"
     }
   }
   lifecycle {

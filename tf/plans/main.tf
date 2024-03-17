@@ -11,7 +11,9 @@ module "pd-common" {
   source                      = "../common-modules"
   rotation_start              = "2017-06-01T12:00:00-04:00"
   rotation_virtual_start      = "2017-06-01T12:00:00-04:00"
+  pd_support_team             = "Tech DevSecOps"
   pd_secret_value             = local.pd_secret_value
+  oncall_users                = ["bmquiroz@rc-its.com"]
 }
 
 module "pd-gbst-prod" {
@@ -20,8 +22,23 @@ module "pd-gbst-prod" {
   pd_gbst_ep_user_email       = "bmquiroz@rc-its.com"
   pd_secret_value             = local.pd_secret_value
   pd_team                     = module.pd-common.pd-team-id
+  pd_schedule                 = module.pd-common.pd-schedule-id
+}
 
-  # depends_on = [
-  #   module.pd-common
-  # ]
+module "pd-smrs-prod" {
+  source                      = "../app-modules/smrs-ems"
+  environment                 = "prod"
+  pd_gbst_ep_user_email       = "bmquiroz@rc-its.com"
+  pd_secret_value             = local.pd_secret_value
+  pd_team                     = module.pd-common.pd-team-id
+  pd_schedule                 = module.pd-common.pd-schedule-id
+}
+
+module "pd-smrs-prod" {
+  source                      = "../app-modules/dmg"
+  environment                 = "prod"
+  pd_gbst_ep_user_email       = "bmquiroz@rc-its.com"
+  pd_secret_value             = local.pd_secret_value
+  pd_team                     = module.pd-common.pd-team-id
+  pd_schedule                 = module.pd-common.pd-schedule-id
 }
