@@ -1,0 +1,65 @@
+trigger: none
+# - main
+ 
+pool:
+  vmImage: ubuntu-latest
+ 
+stages:    
+  - stage: PRD
+    displayName: prd-deployment
+    jobs:
+      - job: plan
+        pool:
+          vmImage: ubuntu-latest
+        displayName:  terraform-plan
+        steps:
+        - task: TerraformTaskV1@0
+          displayName: 'terraform-init'
+          inputs:
+            provider: 'aws'
+            command: 'init'
+            workingDirectory: '$(System.DefaultWorkingDirectory)/tf/plans'
+            backendServiceAWS: 'gbstdev'
+            backendAWSBucketName: 'pagerduty-config-bucket'
+            backendAWSKey: 'pagerduty-tf-state'
+        - task: TerraformTaskV1@0
+          displayName: 'terraform-plan'
+          inputs:
+            provider: 'aws'
+            command: 'plan'
+            workingDirectory: '$(System.DefaultWorkingDirectory)/tf/plans'
+            environmentServiceNameAWS: 'gbstdev'
+      - job: approve
+        dependsOn: plan
+        condition: and (succeeded(), ne(variables['Build.Reason'], 'PullRequest'))
+        pool: server
+        displayName: Wait for approval
+        steps:
+        - task: ManualValidation@0
+          timeoutInMinutes: 15 # task times out in 15 mins
+          inputs:
+            notifyUsers: boris.quiroz@aenetworks.com
+            instructions: 'Please validate the build configuration and resume'
+            onTimeout: 'reject'
+      - job: apply
+        dependsOn: approve
+        pool:
+          vmImage: ubuntu-latest
+        displayName:  'terraform-apply'
+        steps:
+        - task: TerraformTaskV1@0
+          displayName: 'terraform-init'
+          inputs:
+            provider: 'aws'
+            command: 'init'
+            workingDirectory: '$(System.DefaultWorkingDirectory)/tf/plans'
+            backendServiceAWS: 'gbstdev'
+            backendAWSBucketName: 'pagerduty-config-bucket'
+            backendAWSKey: 'pagerduty-tf-state'
+        - task: TerraformTaskV1@0
+          displayName: 'terraform-apply'
+          inputs:
+            provider: 'aws'
+            command: 'apply'
+            workingDirectory: '$(System.DefaultWorkingDirectory)/tf/plans'
+            environmentServiceNameAWS: 'gbstdev'
