@@ -1,3 +1,12 @@
+terraform {
+  required_providers {
+    pagerduty = {
+      source  = "pagerduty/pagerduty"
+      version = "2.2.1"
+    }
+  }
+}
+
 # PagerDuty config for GPS
 # Create GPS escalation policy
 resource "pagerduty_escalation_policy" "prod-gps-escalation-policy" {

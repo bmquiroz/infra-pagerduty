@@ -4,10 +4,10 @@ terraform {
       source  = "hashicorp/aws"
       version = "~> 4.0"
     }
-    pagerduty = {
-      source  = "pagerduty/pagerduty"
-      version = ">= 2.2.1"
-    }
+    # pagerduty = {
+    #   source  = "pagerduty/pagerduty"
+    #   version = ">= 2.2.1"
+    # }
   }
 
   # backend "s3" {
