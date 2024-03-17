@@ -27,6 +27,7 @@ module "pd-gbst-prod" {
   environment                 = "prod"
   pd_gbst_ep_user_email       = "bmquiroz@rc-its.com"
   pd_secret_value             = local.pd_secret_value
+  pd_team                     = module.pd-common.pd-team-id
 
   # depends_on = [
   #   module.pd-common
