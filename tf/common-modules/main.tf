@@ -11,7 +11,7 @@ resource "pagerduty_team" "techdevsecops" {
 resource "pagerduty_schedule" "techdevsecops-sev1-schedule" {
   name = "CORPTECH SEV1"
   time_zone = "America/New_York"
-  teams = [pagerduty_team.example.id]
+  teams = [pagerduty_team.techdevsecops.id]
   layer {
     name = "Layer 1"
     rotation_turn_length_seconds = 604800

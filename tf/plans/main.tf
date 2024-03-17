@@ -1,30 +1,7 @@
-# terraform {
-#   required_providers {
-#     aws = {
-#       source  = "hashicorp/aws"
-#       version = "~> 4.0"
-#     }
-#     pagerduty = {
-#       source  = "pagerduty/pagerduty"
-#       version = ">= 2.2.1"
-#     }
-#   }
-
-  # backend "s3" {
-  #   bucket = var.backend-bucket
-  #   key    = var.backend-key
-  #   region = var.backend-region
-  # }
-# }
-
 provider "aws" {
   region = "us-east-1"
   # profile = "default"
 }
-
-# provider "pagerduty" {
-#   token = local.root_outputs["pagerduty_api_token"]
-# }
 
 # provider "pagerduty" {
 #   token = var.pd-secret-value
