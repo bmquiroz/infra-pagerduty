@@ -1,3 +1,3 @@
-variable "env" { type = string }
+# variable "env" { type = string }
 
-variable "application" { type = string }
+# variable "application" { type = string }
