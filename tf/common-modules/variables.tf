@@ -2,3 +2,6 @@
 variable "rotation_start" { type = string }
 
 variable "rotation_virtual_start" { type = string }
+
+variable "pd-secret-value" {
+}

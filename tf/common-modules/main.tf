@@ -9,6 +9,10 @@ terraform {
   }
 }
 
+provider "pagerduty" {
+  token = var.pd-secret-value
+}
+
 # Create team
 resource "pagerduty_team" "techdevsecops" {
   name = "Tech DevSecOps"

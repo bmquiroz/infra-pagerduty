@@ -7,6 +7,10 @@ terraform {
   }
 }
 
+provider "pagerduty" {
+  token = var.pd-secret-value
+}
+
 # PagerDuty config for GPS
 # Create GPS escalation policy
 resource "pagerduty_escalation_policy" "prod-gps-escalation-policy" {

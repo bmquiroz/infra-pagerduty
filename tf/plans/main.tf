@@ -26,9 +26,9 @@ provider "aws" {
 #   token = local.root_outputs["pagerduty_api_token"]
 # }
 
-provider "pagerduty" {
-  token = var.pd-secret-value
-}
+# provider "pagerduty" {
+#   token = var.pd-secret-value
+# }
 
 module "pd-common" {
   source                      = "../common-modules"
