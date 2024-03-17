@@ -34,7 +34,7 @@ module "pd-smrs-prod" {
   pd_schedule                 = module.pd-common.pd-schedule-id
 }
 
-module "pd-smrs-prod" {
+module "pd-dmg-prod" {
   source                      = "../app-modules/dmg"
   environment                 = "prod"
   pd_gbst_ep_user_email       = "bmquiroz@rc-its.com"
