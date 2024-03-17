@@ -48,6 +48,7 @@ resource "pagerduty_service_integration" "prod-gps-service-integration-datadog" 
 resource "pagerduty_escalation_policy" "prod-brd-escalation-policy" {
   name = "${var.environment}-brd-escalation-policy"
   num_loops = 3
+  teams = [var.pd_team]
   rule {
     escalation_delay_in_minutes = 15
     target {
@@ -88,6 +89,7 @@ resource "pagerduty_service_integration" "prod-brd-service-integration-datadog" 
 resource "pagerduty_escalation_policy" "prod-deb-escalation-policy" {
   name = "${var.environment}-deb-escalation-policy"
   num_loops = 3
+  teams = [var.pd_team]
   rule {
     escalation_delay_in_minutes = 15
     target {
@@ -128,6 +130,7 @@ resource "pagerduty_service_integration" "prod-deb-service-integration-datadog" 
 resource "pagerduty_escalation_policy" "prod-jag-escalation-policy" {
   name = "${var.environment}-jag-escalation-policy"
   num_loops = 3
+  teams = [var.pd_team]
   rule {
     escalation_delay_in_minutes = 15
     target {
@@ -168,6 +171,7 @@ resource "pagerduty_service_integration" "prod-jag-service-integration-datadog" 
 resource "pagerduty_escalation_policy" "prod-ppl-escalation-policy" {
   name = "${var.environment}-ppl-escalation-policy"
   num_loops = 3
+  teams = [var.pd_team]
   rule {
     escalation_delay_in_minutes = 15
     target {

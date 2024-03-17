@@ -1,8 +1,3 @@
-# output "pd-secret-value" {
-#   value = jsondecode(data.aws_secretsmanager_secret_version.pd-secret-version.secret_string)["pd-secret"]
-#   sensitive = true
-# }
-
 output "gps-datadog-integration-id" {
   value = module.pd-gbst-prod.gps-datadog-integration-id
 }
