@@ -1,5 +1,14 @@
 # PagerDuty common config
 
+terraform {
+  required_providers {
+    pagerduty = {
+      source  = "pagerduty/pagerduty"
+      version = "2.2.1"
+    }
+  }
+}
+
 # Create team
 resource "pagerduty_team" "techdevsecops" {
   name = "Tech DevSecOps"
