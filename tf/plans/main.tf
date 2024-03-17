@@ -22,7 +22,7 @@ provider "pagerduty" {
 }
 
 module "pd-common" {
-  source                      = "../../common-modules"
+  source                      = "../common-modules"
   rotation_start              = "2017-06-01T12:00:00-04:00"
   rotation_virtual_start      = "2017-06-01T12:00:00-04:00"
 
@@ -32,7 +32,7 @@ module "pd-common" {
 }
 
 module "pd-gps-prod" {
-  source                      = "../../app-modules/gbst"
+  source                      = "../app-modules/gbst"
   environment                 = "prod"
   application                 = "gps"
 
