@@ -7,6 +7,7 @@ provider "pagerduty" {
 resource "pagerduty_escalation_policy" "prod-gps-escalation-policy" {
   name = "${var.environment}-gps-escalation-policy"
   num_loops = 3
+  teams = [pagerduty_team.techdevsecops.id]
   rule {
     escalation_delay_in_minutes = 15
     target {
