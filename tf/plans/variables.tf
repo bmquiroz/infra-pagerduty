@@ -16,6 +16,6 @@ variable "backend_region" {
 variable "pd-secret-value" {
 }
 
-variable "pd_gbst_ep_user_email" {
-  type = string
-}
+# variable "pd_gbst_ep_user_email" {
+#   type = string
+# }

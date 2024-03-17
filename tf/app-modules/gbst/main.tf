@@ -10,7 +10,7 @@ resource "pagerduty_escalation_policy" "prod-gps-escalation-policy" {
   rule {
     escalation_delay_in_minutes = 15
     target {
-      id   = data.pagerduty_user.pd_gbst_ep_user_email.id
+      id   = data.pagerduty_user.ep-user.id
       type = "user_reference"
     }
   }
@@ -50,7 +50,7 @@ resource "pagerduty_escalation_policy" "prod-brd-escalation-policy" {
   rule {
     escalation_delay_in_minutes = 15
     target {
-      id   = data.pagerduty_user.pd_gbst_ep_user_email.id
+      id   = data.pagerduty_user.ep-user.id
       type = "user_reference"
     }
   }
@@ -90,7 +90,7 @@ resource "pagerduty_escalation_policy" "prod-deb-escalation-policy" {
   rule {
     escalation_delay_in_minutes = 15
     target {
-      id   = data.pagerduty_user.pd_gbst_ep_user_email.id
+      id   = data.pagerduty_user.ep-user.id
       type = "user_reference"
     }
   }
@@ -130,7 +130,7 @@ resource "pagerduty_escalation_policy" "prod-jag-escalation-policy" {
   rule {
     escalation_delay_in_minutes = 15
     target {
-      id   = data.pagerduty_user.pd_gbst_ep_user_email.id
+      id   = data.pagerduty_user.ep-user.id
       type = "user_reference"
     }
   }
@@ -170,7 +170,7 @@ resource "pagerduty_escalation_policy" "prod-ppl-escalation-policy" {
   rule {
     escalation_delay_in_minutes = 15
     target {
-      id   = data.pagerduty_user.pd_gbst_ep_user_email.id
+      id   = data.pagerduty_user.ep-user.id
       type = "user_reference"
     }
   }
