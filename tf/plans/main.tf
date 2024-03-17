@@ -21,6 +21,7 @@ module "pd-common" {
 module "pd-gbst-prod" {
   source                      = "../app-modules/gbst"
   environment                 = "prod"
+  pd_gbst_ep_user_email       = "bmquiroz@rc-its.com"
   pd-secret-value             = var.pd-secret-value
 
   # depends_on = [
