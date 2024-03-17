@@ -1,5 +1,5 @@
 provider "pagerduty" {
-  token = var.pd-secret-value
+  token = var.pd_secret_value
 }
 
 # Create team
