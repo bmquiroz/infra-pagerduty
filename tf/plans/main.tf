@@ -46,7 +46,7 @@ module "pd-gbst-prod" {
   environment                 = "prod"
   pd-secret-value             = var.pd-secret-value
 
-  depends_on = [
-    module.pd-common
-  ]
+  # depends_on = [
+  #   module.pd-common
+  # ]
 }
