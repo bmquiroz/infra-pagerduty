@@ -4,7 +4,12 @@ terraform {
       source  = "hashicorp/aws"
       version = "~> 4.0"
     }
+    pagerduty = {
+      source  = "pagerduty/pagerduty"
+      version = ">= 2.2.1"
+    }
   }
+
   # backend "s3" {
   #   bucket = var.backend-bucket
   #   key    = var.backend-key
