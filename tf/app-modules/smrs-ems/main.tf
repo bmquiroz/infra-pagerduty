@@ -14,6 +14,10 @@ resource "pagerduty_escalation_policy" "prod-ari-escalation-policy" {
       id   = data.pagerduty_user.ep-mgr.id
       type = "user_reference"
     }
+    target {
+      id   = var.pd_schedule
+      type = "schedule_reference"
+    }
   }
   lifecycle {
     ignore_changes = all
@@ -54,6 +58,10 @@ resource "pagerduty_escalation_policy" "prod-ctr-escalation-policy" {
     target {
       id   = data.pagerduty_user.ep-mgr.id
       type = "user_reference"
+    }
+    target {
+      id   = var.pd_schedule
+      type = "schedule_reference"
     }
   }
   lifecycle {
@@ -96,6 +104,10 @@ resource "pagerduty_escalation_policy" "prod-ema-escalation-policy" {
       id   = data.pagerduty_user.ep-mgr.id
       type = "user_reference"
     }
+    target {
+      id   = var.pd_schedule
+      type = "schedule_reference"
+    }
   }
   lifecycle {
     ignore_changes = all
@@ -136,6 +148,10 @@ resource "pagerduty_escalation_policy" "prod-scr-escalation-policy" {
     target {
       id   = data.pagerduty_user.ep-mgr.id
       type = "user_reference"
+    }
+    target {
+      id   = var.pd_schedule
+      type = "schedule_reference"
     }
   }
   lifecycle {
@@ -178,6 +194,10 @@ resource "pagerduty_escalation_policy" "prod-sst-escalation-policy" {
       id   = data.pagerduty_user.ep-mgr.id
       type = "user_reference"
     }
+    target {
+      id   = var.pd_schedule
+      type = "schedule_reference"
+    }
   }
   lifecycle {
     ignore_changes = all
@@ -219,6 +239,10 @@ resource "pagerduty_escalation_policy" "prod-str-escalation-policy" {
       id   = data.pagerduty_user.ep-mgr.id
       type = "user_reference"
     }
+    target {
+      id   = var.pd_schedule
+      type = "schedule_reference"
+    }
   }
   lifecycle {
     ignore_changes = all
@@ -259,6 +283,10 @@ resource "pagerduty_escalation_policy" "prod-apt-escalation-policy" {
     target {
       id   = data.pagerduty_user.ep-mgr.id
       type = "user_reference"
+    }
+    target {
+      id   = var.pd_schedule
+      type = "schedule_reference"
     }
   }
   lifecycle {

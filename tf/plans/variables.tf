@@ -1,6 +1,6 @@
 variable "backend_bucket" {
   type        = string
-  default     = "pagerduty-config-bucket"
+  default     = "rcits-pagerduty-config-bucket"
 }
  
 variable "backend_key" {

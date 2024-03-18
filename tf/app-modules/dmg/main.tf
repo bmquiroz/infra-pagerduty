@@ -14,6 +14,10 @@ resource "pagerduty_escalation_policy" "prod-aex-escalation-policy" {
       id   = data.pagerduty_user.ep-mgr.id
       type = "user_reference"
     }
+    target {
+      id   = var.pd_schedule
+      type = "schedule_reference"
+    }
   }
   lifecycle {
     ignore_changes = all
@@ -54,6 +58,10 @@ resource "pagerduty_escalation_policy" "prod-bcm-escalation-policy" {
     target {
       id   = data.pagerduty_user.ep-mgr.id
       type = "user_reference"
+    }
+    target {
+      id   = var.pd_schedule
+      type = "schedule_reference"
     }
   }
   lifecycle {
@@ -96,6 +104,10 @@ resource "pagerduty_escalation_policy" "prod-bsm-escalation-policy" {
       id   = data.pagerduty_user.ep-mgr.id
       type = "user_reference"
     }
+    target {
+      id   = var.pd_schedule
+      type = "schedule_reference"
+    }
   }
   lifecycle {
     ignore_changes = all
@@ -136,6 +148,10 @@ resource "pagerduty_escalation_policy" "prod-cdr-escalation-policy" {
     target {
       id   = data.pagerduty_user.ep-mgr.id
       type = "user_reference"
+    }
+    target {
+      id   = var.pd_schedule
+      type = "schedule_reference"
     }
   }
   lifecycle {
@@ -178,6 +194,10 @@ resource "pagerduty_escalation_policy" "prod-ind-escalation-policy" {
       id   = data.pagerduty_user.ep-mgr.id
       type = "user_reference"
     }
+    target {
+      id   = var.pd_schedule
+      type = "schedule_reference"
+    }
   }
   lifecycle {
     ignore_changes = all
@@ -218,6 +238,10 @@ resource "pagerduty_escalation_policy" "prod-rsh-escalation-policy" {
     target {
       id   = data.pagerduty_user.ep-mgr.id
       type = "user_reference"
+    }
+    target {
+      id   = var.pd_schedule
+      type = "schedule_reference"
     }
   }
   lifecycle {
@@ -260,6 +284,10 @@ resource "pagerduty_escalation_policy" "prod-shm-escalation-policy" {
       id   = data.pagerduty_user.ep-mgr.id
       type = "user_reference"
     }
+    target {
+      id   = var.pd_schedule
+      type = "schedule_reference"
+    }
   }
   lifecycle {
     ignore_changes = all
@@ -301,6 +329,10 @@ resource "pagerduty_escalation_policy" "prod-smd-escalation-policy" {
       id   = data.pagerduty_user.ep-mgr.id
       type = "user_reference"
     }
+    target {
+      id   = var.pd_schedule
+      type = "schedule_reference"
+    }
   }
   lifecycle {
     ignore_changes = all
@@ -341,6 +373,10 @@ resource "pagerduty_escalation_policy" "prod-rpa-escalation-policy" {
     target {
       id   = data.pagerduty_user.ep-mgr.id
       type = "user_reference"
+    }
+    target {
+      id   = var.pd_schedule
+      type = "schedule_reference"
     }
   }
   lifecycle {
