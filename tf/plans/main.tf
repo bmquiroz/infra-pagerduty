@@ -19,7 +19,7 @@ module "pd-common" {
 module "pd-gbst-prod" {
   source                      = "../app-modules/gbst"
   environment                 = "prod"
-  pd_gbst_ep_user_email       = "bmquiroz@rc-its.com"
+  pd_gbst_ep_app_mgr_email    = "bmquiroz@rc-its.com"
   pd_secret_value             = local.pd_secret_value
   pd_team                     = module.pd-common.pd-team-id
   pd_schedule                 = module.pd-common.pd-schedule-id
@@ -28,7 +28,7 @@ module "pd-gbst-prod" {
 module "pd-smrs-prod" {
   source                      = "../app-modules/smrs-ems"
   environment                 = "prod"
-  pd_gbst_ep_user_email       = "bmquiroz@rc-its.com"
+  pd_smrs_ep_app_mgr_email    = "bmquiroz@rc-its.com"
   pd_secret_value             = local.pd_secret_value
   pd_team                     = module.pd-common.pd-team-id
   pd_schedule                 = module.pd-common.pd-schedule-id
@@ -37,7 +37,7 @@ module "pd-smrs-prod" {
 module "pd-dmg-prod" {
   source                      = "../app-modules/dmg"
   environment                 = "prod"
-  pd_gbst_ep_user_email       = "bmquiroz@rc-its.com"
+  pd_dmg_ep_app_mgr_email     = "bmquiroz@rc-its.com"
   pd_secret_value             = local.pd_secret_value
   pd_team                     = module.pd-common.pd-team-id
   pd_schedule                 = module.pd-common.pd-schedule-id

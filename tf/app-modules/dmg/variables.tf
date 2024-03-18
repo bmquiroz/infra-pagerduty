@@ -3,7 +3,7 @@ variable "environment" { type = string }
 variable "pd_secret_value" {
 }
 
-variable "pd_gbst_ep_user_email" {
+variable "pd_dmg_ep_app_mgr_email" {
   type = string
 }
 

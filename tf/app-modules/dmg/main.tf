@@ -11,7 +11,7 @@ resource "pagerduty_escalation_policy" "prod-aex-escalation-policy" {
   rule {
     escalation_delay_in_minutes = 15
     target {
-      id   = data.pagerduty_user.ep-user.id
+      id   = data.pagerduty_user.ep-mgr.id
       type = "user_reference"
     }
   }
@@ -52,7 +52,7 @@ resource "pagerduty_escalation_policy" "prod-bcm-escalation-policy" {
   rule {
     escalation_delay_in_minutes = 15
     target {
-      id   = data.pagerduty_user.ep-user.id
+      id   = data.pagerduty_user.ep-mgr.id
       type = "user_reference"
     }
   }
@@ -93,7 +93,7 @@ resource "pagerduty_escalation_policy" "prod-bsm-escalation-policy" {
   rule {
     escalation_delay_in_minutes = 15
     target {
-      id   = data.pagerduty_user.ep-user.id
+      id   = data.pagerduty_user.ep-mgr.id
       type = "user_reference"
     }
   }
@@ -134,7 +134,7 @@ resource "pagerduty_escalation_policy" "prod-cdr-escalation-policy" {
   rule {
     escalation_delay_in_minutes = 15
     target {
-      id   = data.pagerduty_user.ep-user.id
+      id   = data.pagerduty_user.ep-mgr.id
       type = "user_reference"
     }
   }
@@ -175,7 +175,7 @@ resource "pagerduty_escalation_policy" "prod-ind-escalation-policy" {
   rule {
     escalation_delay_in_minutes = 15
     target {
-      id   = data.pagerduty_user.ep-user.id
+      id   = data.pagerduty_user.ep-mgr.id
       type = "user_reference"
     }
   }
@@ -216,7 +216,7 @@ resource "pagerduty_escalation_policy" "prod-rsh-escalation-policy" {
   rule {
     escalation_delay_in_minutes = 15
     target {
-      id   = data.pagerduty_user.ep-user.id
+      id   = data.pagerduty_user.ep-mgr.id
       type = "user_reference"
     }
   }
@@ -257,7 +257,7 @@ resource "pagerduty_escalation_policy" "prod-shm-escalation-policy" {
   rule {
     escalation_delay_in_minutes = 15
     target {
-      id   = data.pagerduty_user.ep-user.id
+      id   = data.pagerduty_user.ep-mgr.id
       type = "user_reference"
     }
   }
@@ -298,7 +298,7 @@ resource "pagerduty_escalation_policy" "prod-smd-escalation-policy" {
   rule {
     escalation_delay_in_minutes = 15
     target {
-      id   = data.pagerduty_user.ep-user.id
+      id   = data.pagerduty_user.ep-mgr.id
       type = "user_reference"
     }
   }
@@ -339,7 +339,7 @@ resource "pagerduty_escalation_policy" "prod-rpa-escalation-policy" {
   rule {
     escalation_delay_in_minutes = 15
     target {
-      id   = data.pagerduty_user.ep-user.id
+      id   = data.pagerduty_user.ep-mgr.id
       type = "user_reference"
     }
   }

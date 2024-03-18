@@ -11,7 +11,7 @@ resource "pagerduty_escalation_policy" "prod-ari-escalation-policy" {
   rule {
     escalation_delay_in_minutes = 15
     target {
-      id   = data.pagerduty_user.ep-user.id
+      id   = data.pagerduty_user.ep-mgr.id
       type = "user_reference"
     }
   }
@@ -52,7 +52,7 @@ resource "pagerduty_escalation_policy" "prod-ctr-escalation-policy" {
   rule {
     escalation_delay_in_minutes = 15
     target {
-      id   = data.pagerduty_user.ep-user.id
+      id   = data.pagerduty_user.ep-mgr.id
       type = "user_reference"
     }
   }
@@ -93,7 +93,7 @@ resource "pagerduty_escalation_policy" "prod-ema-escalation-policy" {
   rule {
     escalation_delay_in_minutes = 15
     target {
-      id   = data.pagerduty_user.ep-user.id
+      id   = data.pagerduty_user.ep-mgr.id
       type = "user_reference"
     }
   }
@@ -134,7 +134,7 @@ resource "pagerduty_escalation_policy" "prod-scr-escalation-policy" {
   rule {
     escalation_delay_in_minutes = 15
     target {
-      id   = data.pagerduty_user.ep-user.id
+      id   = data.pagerduty_user.ep-mgr.id
       type = "user_reference"
     }
   }
@@ -175,7 +175,7 @@ resource "pagerduty_escalation_policy" "prod-sst-escalation-policy" {
   rule {
     escalation_delay_in_minutes = 15
     target {
-      id   = data.pagerduty_user.ep-user.id
+      id   = data.pagerduty_user.ep-mgr.id
       type = "user_reference"
     }
   }
@@ -216,7 +216,7 @@ resource "pagerduty_escalation_policy" "prod-str-escalation-policy" {
   rule {
     escalation_delay_in_minutes = 15
     target {
-      id   = data.pagerduty_user.ep-user.id
+      id   = data.pagerduty_user.ep-mgr.id
       type = "user_reference"
     }
   }
@@ -257,7 +257,7 @@ resource "pagerduty_escalation_policy" "prod-apt-escalation-policy" {
   rule {
     escalation_delay_in_minutes = 15
     target {
-      id   = data.pagerduty_user.ep-user.id
+      id   = data.pagerduty_user.ep-mgr.id
       type = "user_reference"
     }
   }
