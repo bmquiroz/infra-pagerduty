@@ -19,8 +19,8 @@ stages:
             provider: 'aws'
             command: 'init'
             workingDirectory: '$(System.DefaultWorkingDirectory)/tf/plans'
-            backendServiceAWS: 'gbstdev'
-            backendAWSBucketName: 'pagerduty-config-bucket'
+            backendServiceAWS: 'rcits-aws-1'
+            backendAWSBucketName: 'rcits-pagerduty-config-bucket'
             backendAWSKey: 'pagerduty-tf-state'
         - task: TerraformTaskV1@0
           displayName: 'terraform-plan'
@@ -28,7 +28,7 @@ stages:
             provider: 'aws'
             command: 'plan'
             workingDirectory: '$(System.DefaultWorkingDirectory)/tf/plans'
-            environmentServiceNameAWS: 'gbstdev'
+            environmentServiceNameAWS: 'rcits-aws-1'
       - job: approve
         dependsOn: plan
         condition: and (succeeded(), ne(variables['Build.Reason'], 'PullRequest'))
@@ -38,7 +38,7 @@ stages:
         - task: ManualValidation@0
           timeoutInMinutes: 15 # task times out in 15 mins
           inputs:
-            notifyUsers: boris.quiroz@aenetworks.com
+            notifyUsers: bmquiroz@outlook.com
             instructions: 'Please validate the build configuration and resume'
             onTimeout: 'reject'
       - job: apply
@@ -53,8 +53,8 @@ stages:
             provider: 'aws'
             command: 'init'
             workingDirectory: '$(System.DefaultWorkingDirectory)/tf/plans'
-            backendServiceAWS: 'gbstdev'
-            backendAWSBucketName: 'pagerduty-config-bucket'
+            backendServiceAWS: 'rcits-aws-1'
+            backendAWSBucketName: 'rcits-pagerduty-config-bucket'
             backendAWSKey: 'pagerduty-tf-state'
         - task: TerraformTaskV1@0
           displayName: 'terraform-apply'
@@ -62,4 +62,4 @@ stages:
             provider: 'aws'
             command: 'apply'
             workingDirectory: '$(System.DefaultWorkingDirectory)/tf/plans'
-            environmentServiceNameAWS: 'gbstdev'
+            environmentServiceNameAWS: 'rcits-aws-1'
