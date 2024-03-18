@@ -12,8 +12,8 @@ module "pd-common" {
   rotation_start              = "2017-06-01T12:00:00-04:00"
   rotation_virtual_start      = "2017-06-01T12:00:00-04:00"
   pd_support_team             = "Tech DevSecOps"
-  pd_secret_value             = local.pd_secret_value
   oncall_users                = ["bmquiroz@rc-its.com"]
+  pd_secret_value             = local.pd_secret_value
 }
 
 module "pd-gbst-prod" {
