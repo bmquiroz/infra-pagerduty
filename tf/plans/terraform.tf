@@ -12,7 +12,7 @@ terraform {
   }
     backend "s3" {
       bucket = "rcits-pagerduty-config-bucket"
-      key    = "pagerduty-tf-state/"
+      key    = "pagerduty-tf-state"
       region = "us-east-1"
   }
 }
