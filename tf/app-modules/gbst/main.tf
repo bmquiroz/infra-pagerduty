@@ -2,10 +2,9 @@ provider "pagerduty" {
   token = var.pd_secret_value
 }
 
-# PagerDuty config for GPS
-# Create GPS escalation policy
-resource "pagerduty_escalation_policy" "prod-gps-escalation-policy" {
-  name = "${var.environment}-gps-escalation-policy"
+# Create LoB escalation policy
+resource "pagerduty_escalation_policy" "prod-gbst-escalation-policy" {
+  name = "${var.environment}-gbst-escalation-policy"
   num_loops = 3
   teams = [var.pd_team]
   rule {
@@ -24,12 +23,34 @@ resource "pagerduty_escalation_policy" "prod-gps-escalation-policy" {
   }
 }
 
+# PagerDuty config for GPS
+# Create GPS escalation policy
+# resource "pagerduty_escalation_policy" "prod-gps-escalation-policy" {
+#   name = "${var.environment}-gps-escalation-policy"
+#   num_loops = 3
+#   teams = [var.pd_team]
+#   rule {
+#     escalation_delay_in_minutes = 15
+#     target {
+#       id   = data.pagerduty_user.ep-mgr.id
+#       type = "user_reference"
+#     }
+#     target {
+#       id   = var.pd_schedule
+#       type = "schedule_reference"
+#     }
+#   }
+#   lifecycle {
+#     ignore_changes = all
+#   }
+# }
+
 # Create GPS service
 resource "pagerduty_service" "prod-gps-service" {
   name = "${var.environment}-gps-service"
   # auto_resolve_timeout = 14400
   # acknowledgement_timeout = 1800
-  escalation_policy = pagerduty_escalation_policy.prod-gps-escalation-policy.id
+  escalation_policy = pagerduty_escalation_policy.prod-gbst-escalation-policy.id
   alert_creation    = "create_alerts_and_incidents"
   incident_urgency_rule {
     type    = "constant"
@@ -49,32 +70,32 @@ resource "pagerduty_service_integration" "prod-gps-service-integration-datadog" 
 
 # PagerDuty config for BRD
 # Create BRD escalation policy
-resource "pagerduty_escalation_policy" "prod-brd-escalation-policy" {
-  name = "${var.environment}-brd-escalation-policy"
-  num_loops = 3
-  teams = [var.pd_team]
-  rule {
-    escalation_delay_in_minutes = 15
-    target {
-      id   = data.pagerduty_user.ep-mgr.id
-      type = "user_reference"
-    }
-    target {
-      id   = var.pd_schedule
-      type = "schedule_reference"
-    }
-  }
-  lifecycle {
-    ignore_changes = all
-  }
-}
+# resource "pagerduty_escalation_policy" "prod-brd-escalation-policy" {
+#   name = "${var.environment}-brd-escalation-policy"
+#   num_loops = 3
+#   teams = [var.pd_team]
+#   rule {
+#     escalation_delay_in_minutes = 15
+#     target {
+#       id   = data.pagerduty_user.ep-mgr.id
+#       type = "user_reference"
+#     }
+#     target {
+#       id   = var.pd_schedule
+#       type = "schedule_reference"
+#     }
+#   }
+#   lifecycle {
+#     ignore_changes = all
+#   }
+# }
 
 # Create BRD service
 resource "pagerduty_service" "prod-brd-service" {
   name = "${var.environment}-brd-service"
   # auto_resolve_timeout = 14400
   # acknowledgement_timeout = 1800
-  escalation_policy = pagerduty_escalation_policy.prod-brd-escalation-policy.id
+  escalation_policy = pagerduty_escalation_policy.prod-gbst-escalation-policy.id
   alert_creation    = "create_alerts_and_incidents"
   incident_urgency_rule {
     type    = "constant"
@@ -94,32 +115,32 @@ resource "pagerduty_service_integration" "prod-brd-service-integration-datadog" 
 
 # PagerDuty config for DEB
 # Create DEB escalation policy
-resource "pagerduty_escalation_policy" "prod-deb-escalation-policy" {
-  name = "${var.environment}-deb-escalation-policy"
-  num_loops = 3
-  teams = [var.pd_team]
-  rule {
-    escalation_delay_in_minutes = 15
-    target {
-      id   = data.pagerduty_user.ep-mgr.id
-      type = "user_reference"
-    }
-    target {
-      id   = var.pd_schedule
-      type = "schedule_reference"
-    }
-  }
-  lifecycle {
-    ignore_changes = all
-  }
-}
+# resource "pagerduty_escalation_policy" "prod-deb-escalation-policy" {
+#   name = "${var.environment}-deb-escalation-policy"
+#   num_loops = 3
+#   teams = [var.pd_team]
+#   rule {
+#     escalation_delay_in_minutes = 15
+#     target {
+#       id   = data.pagerduty_user.ep-mgr.id
+#       type = "user_reference"
+#     }
+#     target {
+#       id   = var.pd_schedule
+#       type = "schedule_reference"
+#     }
+#   }
+#   lifecycle {
+#     ignore_changes = all
+#   }
+# }
 
 # Create DEB service
 resource "pagerduty_service" "prod-deb-service" {
   name = "${var.environment}-deb-service"
   # auto_resolve_timeout = 14400
   # acknowledgement_timeout = 1800
-  escalation_policy = pagerduty_escalation_policy.prod-deb-escalation-policy.id
+  escalation_policy = pagerduty_escalation_policy.prod-gbst-escalation-policy.id
   alert_creation    = "create_alerts_and_incidents"
   incident_urgency_rule {
     type    = "constant"
@@ -139,32 +160,32 @@ resource "pagerduty_service_integration" "prod-deb-service-integration-datadog" 
 
 # PagerDuty config for JAG
 # Create JAG escalation policy
-resource "pagerduty_escalation_policy" "prod-jag-escalation-policy" {
-  name = "${var.environment}-jag-escalation-policy"
-  num_loops = 3
-  teams = [var.pd_team]
-  rule {
-    escalation_delay_in_minutes = 15
-    target {
-      id   = data.pagerduty_user.ep-mgr.id
-      type = "user_reference"
-    }
-    target {
-      id   = var.pd_schedule
-      type = "schedule_reference"
-    }
-  }
-  lifecycle {
-    ignore_changes = all
-  }
-}
+# resource "pagerduty_escalation_policy" "prod-jag-escalation-policy" {
+#   name = "${var.environment}-jag-escalation-policy"
+#   num_loops = 3
+#   teams = [var.pd_team]
+#   rule {
+#     escalation_delay_in_minutes = 15
+#     target {
+#       id   = data.pagerduty_user.ep-mgr.id
+#       type = "user_reference"
+#     }
+#     target {
+#       id   = var.pd_schedule
+#       type = "schedule_reference"
+#     }
+#   }
+#   lifecycle {
+#     ignore_changes = all
+#   }
+# }
 
 # Create JAG service
 resource "pagerduty_service" "prod-jag-service" {
   name = "${var.environment}-jag-service"
   # auto_resolve_timeout = 14400
   # acknowledgement_timeout = 1800
-  escalation_policy = pagerduty_escalation_policy.prod-jag-escalation-policy.id
+  escalation_policy = pagerduty_escalation_policy.prod-gbst-escalation-policy.id
   alert_creation    = "create_alerts_and_incidents"
   incident_urgency_rule {
     type    = "constant"
@@ -184,32 +205,32 @@ resource "pagerduty_service_integration" "prod-jag-service-integration-datadog" 
 
 # PagerDuty config for PPL
 # Create PPL escalation policy
-resource "pagerduty_escalation_policy" "prod-ppl-escalation-policy" {
-  name = "${var.environment}-ppl-escalation-policy"
-  num_loops = 3
-  teams = [var.pd_team]
-  rule {
-    escalation_delay_in_minutes = 15
-    target {
-      id   = data.pagerduty_user.ep-mgr.id
-      type = "user_reference"
-    }
-    target {
-      id   = var.pd_schedule
-      type = "schedule_reference"
-    }
-  }
-  lifecycle {
-    ignore_changes = all
-  }
-}
+# resource "pagerduty_escalation_policy" "prod-ppl-escalation-policy" {
+#   name = "${var.environment}-ppl-escalation-policy"
+#   num_loops = 3
+#   teams = [var.pd_team]
+#   rule {
+#     escalation_delay_in_minutes = 15
+#     target {
+#       id   = data.pagerduty_user.ep-mgr.id
+#       type = "user_reference"
+#     }
+#     target {
+#       id   = var.pd_schedule
+#       type = "schedule_reference"
+#     }
+#   }
+#   lifecycle {
+#     ignore_changes = all
+#   }
+# }
 
 # Create PPL service
 resource "pagerduty_service" "prod-ppl-service" {
   name = "${var.environment}-ppl-service"
   # auto_resolve_timeout = 14400
   # acknowledgement_timeout = 1800
-  escalation_policy = pagerduty_escalation_policy.prod-ppl-escalation-policy.id
+  escalation_policy = pagerduty_escalation_policy.prod-gbst-escalation-policy.id
   alert_creation    = "create_alerts_and_incidents"
   incident_urgency_rule {
     type    = "constant"
