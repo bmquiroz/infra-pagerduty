@@ -14,11 +14,15 @@ resource "pagerduty_escalation_policy" "prod-gbst-escalation-policy" {
       type = "user_reference"
     }
     target {
-      id   = var.pd_schedule
+      id   = var.pd_gbst_schedule
       type = "schedule_reference"
     }
     target {
-      id   = var.pd_app_schedule
+      id   = var.pd_db_gbst_schedule
+      type = "schedule_reference"
+    }
+    target {
+      id   = var.pd_app_gbst_schedule
       type = "schedule_reference"
     }
   }

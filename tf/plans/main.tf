@@ -29,8 +29,9 @@ module "pd-gbst-prod" {
   pd_gbst_ep_app_mgr_email    = "bmquiroz@rc-its.com"
   pd_secret_value             = local.pd_secret_value
   pd_team                     = module.pd-common.pd-team-id
-  pd_schedule                 = module.pd-common.pd-schedule-id
-  pd_app_schedule             = module.pd-common.pd-app-schedule-id
+  pd_schedule                 = module.pd-common.pd-gbst-schedule-id
+  pd_db-schedule              = module.pd-common.pd-db-gbst-schedule-id
+  pd_app_schedule             = module.pd-common.pd-app-gbst-schedule-id
 }
 
 # module "pd-smrs-prod" {
