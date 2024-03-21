@@ -14,3 +14,7 @@ variable "pd_team" {
 variable "pd_schedule" {
   type = string
 }
+
+variable "pd_app_schedule" {
+  type = string
+}

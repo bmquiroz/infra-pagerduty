@@ -17,6 +17,10 @@ resource "pagerduty_escalation_policy" "prod-gbst-escalation-policy" {
       id   = var.pd_schedule
       type = "schedule_reference"
     }
+    target {
+      id   = var.pd_app_schedule
+      type = "schedule_reference"
+    }
   }
   lifecycle {
     ignore_changes = all
