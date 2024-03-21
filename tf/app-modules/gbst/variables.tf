@@ -11,14 +11,14 @@ variable "pd_team" {
   type = string
 }
 
-variable "pd_gbst_schedule" {
+variable "pd_schedule" {
   type = string
 }
 
-variable "pd_db_gbst_schedule" {
+variable "pd_db_schedule" {
   type = string
 }
 
-variable "pd_app_gbst_schedule" {
+variable "pd_app_schedule" {
   type = string
 }

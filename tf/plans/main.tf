@@ -30,7 +30,7 @@ module "pd-gbst-prod" {
   pd_secret_value             = local.pd_secret_value
   pd_team                     = module.pd-common.pd-team-id
   pd_schedule                 = module.pd-common.pd-gbst-schedule-id
-  pd_db-schedule              = module.pd-common.pd-db-gbst-schedule-id
+  pd_db_schedule              = module.pd-common.pd-db-gbst-schedule-id
   pd_app_schedule             = module.pd-common.pd-app-gbst-schedule-id
 }
 
