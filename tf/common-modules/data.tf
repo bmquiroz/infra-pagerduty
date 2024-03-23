@@ -4,16 +4,16 @@ data "pagerduty_user" "app-support-mgr" {
 }
 
 data "pagerduty_user" "devops-support-eng" {
-  for_each = toset(var.oncall_users)
+  for_each = toset(var.oncall_gbst_devops)
   email    = each.value
 }
 
 data "pagerduty_user" "database-support-eng" {
-  for_each = toset(var.oncall_db_team)
+  for_each = toset(var.oncall_gbst_db)
   email    = each.value
 }
 
 data "pagerduty_user" "app-support-eng" {
-  for_each = toset(var.oncall_app_team)
+  for_each = toset(var.oncall_gbst_app)
   email    = each.value
 }

@@ -26,6 +26,13 @@ resource "pagerduty_escalation_policy" "prod-gbst-escalation-policy" {
       type = "schedule_reference"
     }
   }
+  rule {
+    escalation_delay_in_minutes = 15
+    target {
+      id   = data.pagerduty_user.ep-mgr2.id
+      type = "user_reference"
+    }
+  }
   lifecycle {
     ignore_changes = all
   }
