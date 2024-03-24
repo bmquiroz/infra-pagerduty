@@ -14,7 +14,7 @@ resource "pagerduty_team" "app-support-team" {
 
 # Create DevSecOps schedule
 resource "pagerduty_schedule" "techdevsecops-sev1-gbst-schedule" {
-  name = "CORPTECH SEV1"
+  name = "GBST CORPTECH SEV1"
   time_zone = "America/New_York"
   teams = [pagerduty_team.support-team.id]
   layer {
@@ -39,7 +39,7 @@ resource "pagerduty_schedule" "techdevsecops-sev1-gbst-schedule" {
 
 # Create DB schedule
 resource "pagerduty_schedule" "techdb-sev1-gbst-schedule" {
-  name = "CORPTECHDB SEV1"
+  name = "GBST CORPTECHDB SEV1"
   time_zone = "America/New_York"
   teams = [pagerduty_team.support-team.id]
   layer {
@@ -54,7 +54,7 @@ resource "pagerduty_schedule" "techdb-sev1-gbst-schedule" {
 
 # Create App schedule
 resource "pagerduty_schedule" "app-sev1-gbst-schedule" {
-  name = "APPTEAM SEV1"
+  name = "GBST APPTEAM SEV1"
   time_zone = "America/New_York"
   teams = [pagerduty_team.support-team.id]
   layer {
@@ -69,7 +69,7 @@ resource "pagerduty_schedule" "app-sev1-gbst-schedule" {
 
 # Create DevSecOps schedule
 resource "pagerduty_schedule" "techdevsecops-sev1-smrs-schedule" {
-  name = "CORPTECH SEV1"
+  name = "SMRS CORPTECH SEV1"
   time_zone = "America/New_York"
   teams = [pagerduty_team.support-team.id]
   layer {
@@ -84,7 +84,7 @@ resource "pagerduty_schedule" "techdevsecops-sev1-smrs-schedule" {
 
 # Create DB schedule
 resource "pagerduty_schedule" "techdb-sev1-smrs-schedule" {
-  name = "CORPTECHDB SEV1"
+  name = "SMRS CORPTECHDB SEV1"
   time_zone = "America/New_York"
   teams = [pagerduty_team.support-team.id]
   layer {
@@ -99,7 +99,7 @@ resource "pagerduty_schedule" "techdb-sev1-smrs-schedule" {
 
 # Create App schedule
 resource "pagerduty_schedule" "app-sev1-smrs-schedule" {
-  name = "APPTEAM SEV1"
+  name = "SMRS APPTEAM SEV1"
   time_zone = "America/New_York"
   teams = [pagerduty_team.support-team.id]
   layer {
@@ -114,7 +114,7 @@ resource "pagerduty_schedule" "app-sev1-smrs-schedule" {
 
 # Create DevSecOps schedule
 resource "pagerduty_schedule" "techdevsecops-sev1-dmg-schedule" {
-  name = "CORPTECH SEV1"
+  name = "DMG CORPTECH SEV1"
   time_zone = "America/New_York"
   teams = [pagerduty_team.support-team.id]
   layer {
@@ -129,7 +129,7 @@ resource "pagerduty_schedule" "techdevsecops-sev1-dmg-schedule" {
 
 # Create DB schedule
 resource "pagerduty_schedule" "techdb-sev1-dmg-schedule" {
-  name = "CORPTECHDB SEV1"
+  name = "DMG CORPTECHDB SEV1"
   time_zone = "America/New_York"
   teams = [pagerduty_team.support-team.id]
   layer {
@@ -144,7 +144,7 @@ resource "pagerduty_schedule" "techdb-sev1-dmg-schedule" {
 
 # Create App schedule
 resource "pagerduty_schedule" "app-sev1-dmg-schedule" {
-  name = "APPTEAM SEV1"
+  name = "DMG APPTEAM SEV1"
   time_zone = "America/New_York"
   teams = [pagerduty_team.support-team.id]
   layer {
