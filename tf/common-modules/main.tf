@@ -21,7 +21,7 @@ resource "pagerduty_schedule" "techdevsecops-sev1-gbst-schedule" {
     name = "DevSecOps"
     rotation_turn_length_seconds = 604800
     start = var.rotation_start
-    # end = var.rotation_end
+    end = var.rotation_end
     rotation_virtual_start = var.rotation_virtual_start
     # users = [data.pagerduty_user.app-support-mgr.id]
     users = [for user in data.pagerduty_user.devops-support-eng : user.id]
