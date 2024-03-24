@@ -9,10 +9,10 @@ locals {
 
 module "pd-common" {
   source                      = "../common-modules"
-  # rotation_start              = "2017-06-01T12:00:00-04:00"
-  # rotation_end                = "2017-06-01T12:00:00-04:00"
-  rotation_start              = formatdate("YYYY-MM-DD'T'hh:mm:ssZ", "2024-03-25T12:00:00Z")
-  rotation_end                = timeadd(var.rotation_start, "336h")
+  rotation_start              = "2017-06-01T12:00:00-04:00"
+  rotation_end                = "2017-06-01T12:00:00-04:00"
+  # rotation_start              = formatdate("YYYY-MM-DD'T'hh:mm:ssZ", "2024-03-25T12:00:00Z")
+  # rotation_end                = timeadd(rotation_start, "336h")
   # rotation_virtual_start      = "2017-06-01T12:00:00-04:00"
   rotation_virtual_start      = formatdate("YYYY-MM-DD'T'hh:mm:ssZ", "2024-03-25T12:00:00Z")
   pd_support_team             = "Tech DevSecOps"
