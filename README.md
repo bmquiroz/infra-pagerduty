@@ -59,7 +59,8 @@ The contents of this repo are intended to provide a means to automate the creati
 
 ### Prerequisites
 
-Ensure secret is added to Secrets Manager and ARN is added to `data` block as follows:
+1. Ensure users are onboarded onto PagerDuty before their e-mail addresses are added to `oncall` list
+2. Ensure secret is added to Secrets Manager and ARN is added to `data` block as follows:
     ```console
     data "aws_secretsmanager_secret" "pd-secret" {
     arn = "arn:aws:secretsmanager:us-east-1:795345444371:secret:pd-secret-ILYbqF"
