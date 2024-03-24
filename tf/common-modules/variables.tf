@@ -24,3 +24,33 @@ variable "oncall_gbst_app" {
   description = "List of on-call user e-mails"
   type        = list(string)
 }
+
+variable "oncall_smrs_devops" {
+  description = "List of on-call user e-mails"
+  type        = list(string)
+}
+
+variable "oncall_smrs_db" {
+  description = "List of on-call user e-mails"
+  type        = list(string)
+}
+
+variable "oncall_smrs_app" {
+  description = "List of on-call user e-mails"
+  type        = list(string)
+}
+
+variable "oncall_dmg_devops" {
+  description = "List of on-call user e-mails"
+  type        = list(string)
+}
+
+variable "oncall_dmg_db" {
+  description = "List of on-call user e-mails"
+  type        = list(string)
+}
+
+variable "oncall_dmg_app" {
+  description = "List of on-call user e-mails"
+  type        = list(string)
+}
