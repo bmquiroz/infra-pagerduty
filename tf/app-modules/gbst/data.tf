@@ -5,3 +5,7 @@ data "pagerduty_vendor" "datadog" {
 data "pagerduty_user" "ep-mgr" {
   email = var.pd_gbst_ep_app_mgr_email
 }
+
+data "pagerduty_user" "ep-mgr2" {
+  email = var.pd_gbst_ep_app_mgr2_email
+}
